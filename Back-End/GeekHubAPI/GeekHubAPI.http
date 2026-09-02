@@ -1,0 +1,6 @@
+@GeekHubAPI_HostAddress = http://localhost:5163
+
+GET {{GeekHubAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

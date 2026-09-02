@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <link rel="stylesheet" href="./output.css">
+    <link rel="stylesheet" href="./css/animations.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Geek Hub</title>
+
+</head>
+
+<body class="overflow-x-hidden bg-zinc-950 text-white">
+
+    <nav class="flex h-20 items-center justify-between border-b border-zinc-800 bg-zinc-950 px-8">
+
+        <!-- Logo -->
+        <a
+            href="#"
+            class="text-2xl font-bold tracking-tight transition-transform duration-200 ease-out hover:scale-105"
+        >
+            Geek <span class="text-yellow-500">Hub</span>
+        </a>
+
+
+        <!-- Main Navigation -->
+        <div class="flex items-center gap-8">
+
+            <a
+                href="#"
+                class="text-sm font-medium text-zinc-400 transition-all duration-200 ease-out hover:scale-110 hover:text-white"
+            >
+                Home
+            </a>
+
+            <a
+                href="#"
+                class="text-sm font-medium text-zinc-400 transition-all duration-200 ease-out hover:scale-110 hover:text-white"
+            >
+                Anime
+            </a>
+
+            <a
+                href="#"
+                class="text-sm font-medium text-zinc-400 transition-all duration-200 ease-out hover:scale-110 hover:text-white"
+            >
+                Characters
+            </a>
+
+            <a
+                href="#"
+                class="text-sm font-medium text-zinc-400 transition-all duration-200 ease-out hover:scale-110 hover:text-white"
+            >
+                Genres
+            </a>
+
+        </div>
+
+
+        <!-- Search -->
+        <div class="relative flex items-center">
+
+            <!-- Search Bar -->
+            <div
+                id="searchBar"
+                class="absolute right-12 top-1/2 z-10 flex w-72 -translate-y-1/2 translate-x-4 items-center rounded-full border border-zinc-700 bg-zinc-900 px-4 py-2 opacity-0 shadow-lg pointer-events-none transition-all duration-300 ease-out data-[open=true]:translate-x-0 data-[open=true]:opacity-100 data-[open=true]:pointer-events-auto"
+            >
+
+                <!-- Input -->
+                <input
+                    id="searchInput"
+                    type="text"
+                    placeholder="Search anime or character..."
+                    class="w-full bg-transparent text-sm text-white outline-none placeholder:text-zinc-500"
+                >
+
+            </div>
+
+
+            <!-- Search Button -->
+<button
+    id="searchButton"
+    type="button"
+    class="relative z-20 flex h-10 w-10 items-center justify-center rounded-full text-zinc-400 transition-all duration-200 ease-out hover:scale-110 hover:bg-zinc-800 hover:text-white"
+    aria-label="Search"
+>
+
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.8"
+        stroke="currentColor"
+        class="h-5 w-5"
+    >
+        <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m21 21-4.35-4.35m1.35-5.4a6.75 6.75 0 1 1-13.5 0 6.75 6.75 0 0 1 13.5 0Z"
+        />
+    </svg>
+
+</button>
+
+        </div>
+
+    </nav>
+
+
+   <main class="relative flex min-h-[calc(100vh-5rem)] w-full items-center overflow-hidden bg-zinc-950 text-white">
+
+    <div class="pointer-events-none absolute left-[30%] top-1/2 h-[500px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-yellow-500/10 blur-[120px]"></div>
+
+    <div class="relative z-20 mx-auto flex w-full max-w-7xl items-center px-8 py-12">
+        <div class="flex w-full flex-col items-start gap-8 lg:w-[55%]">
+            
+            <h1 class="text-4xl font-bold leading-tight tracking-tight text-white md:text-5xl lg:text-6xl">
+                Welcome to <br />
+                <span class="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">Geek Hub</span>
+            </h1>
+            
+            <p class="max-w-lg text-base text-zinc-400 md:text-lg">
+                Discover more about your favorite characters in a stylish and interactive way.
+            </p>
+
+            <div class="flex w-full flex-col items-start gap-4 sm:flex-row sm:items-center">
+                <div class="relative w-full flex-1">
+                    <input 
+                        type="text" 
+                        placeholder="ex: megumin" 
+                        class="w-full rounded-full border border-zinc-700 bg-zinc-900 py-4 pl-6 pr-4 text-white placeholder-zinc-500 outline-none transition-all duration-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20"
+                    />
+                </div>
+                <button 
+                    type="button" 
+                    class="group flex w-full items-center justify-center gap-2 rounded-full bg-yellow-500 px-8 py-4 font-semibold text-zinc-950 transition-all duration-300 hover:scale-105 hover:bg-yellow-400 hover:shadow-lg hover:shadow-yellow-500/20 sm:w-auto"
+                >
+                    Search Character
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="h-5 w-5 transition-transform duration-300 group-hover:rotate-12">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-4.35-4.35m1.35-5.4a6.75 6.75 0 1 1-13.5 0 6.75 6.75 0 0 1 13.5 0Z" />
+                    </svg>
+                </button>
+            </div>
+
+            <button 
+                type="button" 
+                class="group flex items-center gap-3 rounded-full border border-zinc-700 px-6 py-3 text-zinc-300 transition-all duration-300 hover:border-yellow-500 hover:text-white"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5 text-yellow-500">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09Z" />
+                </svg>
+                Random Character
+            </button>
+
+            <div class="mt-4 flex items-center gap-2">
+                <span class="h-1.5 w-8 rounded-full bg-yellow-500"></span>
+                <span class="h-1.5 w-4 rounded-full bg-zinc-700 transition-all duration-300 hover:bg-zinc-500"></span>
+                <span class="h-1.5 w-4 rounded-full bg-zinc-700 transition-all duration-300 hover:bg-zinc-500"></span>
+                <span class="h-1.5 w-4 rounded-full bg-zinc-700 transition-all duration-300 hover:bg-zinc-500"></span>
+                <span class="h-1.5 w-4 rounded-full bg-zinc-700 transition-all duration-300 hover:bg-zinc-500"></span>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="characterHeroWrapper" class="pointer-events-none absolute -bottom-24 right-0 z-10 flex h-full w-full justify-end lg:w-3/5">
+        <div class="character-hero-container animate-slide-in-right relative flex h-full w-full items-end justify-end">
+            
+            <div id="characterGlow" class="absolute bottom-32 right-[15%] h-[400px] w-[400px] rounded-full bg-yellow-500/20 blur-3xl transition-all duration-500"></div>
+            
+            <img 
+                id="characterImage"
+                src="./assets/images/MeguminAsset.png" 
+                alt="Character Asset" 
+                class="character-hero-img pointer-events-auto relative z-10 h-[95vh] w-auto max-w-none object-contain object-right-bottom drop-shadow-[0_20px_50px_rgba(0,0,0,0.8)] lg:h-[115vh]"
+            />
+
+        </div>
+    </div>
+
+    <div class="pointer-events-none absolute bottom-0 left-0 right-0 z-20 h-24 bg-gradient-to-t from-zinc-950 via-zinc-950/80 to-transparent"></div>
+
+    <div id="prevSlide" class="absolute left-4 top-1/2 z-30 -translate-y-1/2 cursor-pointer text-zinc-600 transition-colors hover:text-white">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-8 w-8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+        </svg>
+    </div>
+    <div id="nextSlide" class="absolute right-4 top-1/2 z-30 -translate-y-1/2 cursor-pointer text-zinc-600 transition-colors hover:text-white">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-8 w-8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+        </svg>
+    </div>
+
+</main>
+
+
+    
+    <script src="./java-script/navbar.js"></script>
+    <script src="./java-script/carousel.js"></script>
+
+</body>
+
+</html>
