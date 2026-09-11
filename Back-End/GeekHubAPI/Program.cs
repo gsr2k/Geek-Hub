@@ -8,7 +8,6 @@ builder.Services.AddControllers();
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite("Data Source=geekhub.db"));
 
-//allows the browser.
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", policy =>
@@ -25,28 +24,43 @@ using (var scope = app.Services.CreateScope())
 {
     var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
     dbContext.Database.EnsureCreated();
-
+    //infos fully AI made, idk about characters deeply.
     if (!dbContext.Characters.Any())
     {
         dbContext.Characters.AddRange(
             new Character
             {
                 Name = "Megumin",
+                FullName = "Megumin",
+                Age = "14",
+                Anime = "KonoSuba",
+                Quote = "EXPLOSION!",
                 Description = "A maga mais explosiva do mundo!",
+                Ability = "Explosion Magic",
                 ImageUrl = "/images/MeguminAsset.png",
                 GlowColor = "#eab308"
             },
             new Character
             {
                 Name = "Kanade",
-                Description = "An angel?",
+                FullName = "Kanade Tachibana",
+                Age = "Unknown",
+                Anime = "Angel Beats!",
+                Quote = "...",
+                Description = "An angel who fights to protect the afterlife.",
+                Ability = "Hand Sonic",
                 ImageUrl = "/images/KanadeAsset.png",
                 GlowColor = "#3b82f6"
             },
             new Character
             {
                 Name = "Kaneki",
-                Description = "The Ghoul",
+                FullName = "Ken Kaneki",
+                Age = "19",
+                Anime = "Tokyo Ghoul",
+                Quote = "I'm not the protagonist of a novel or anything.",
+                Description = "The Ghoul who walks the line between human and monster.",
+                Ability = "Rinkaku Kagune",
                 ImageUrl = "/images/KanekiAsset.png",
                 GlowColor = "#ef4444"
             }
@@ -56,8 +70,7 @@ using (var scope = app.Services.CreateScope())
     }
 }
 
-//missing.
-app.UseCors("AllowAll"); 
+app.UseCors("AllowAll");
 
 app.UseStaticFiles();
 app.MapControllers();

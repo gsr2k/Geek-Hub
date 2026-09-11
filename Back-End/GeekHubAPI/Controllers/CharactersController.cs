@@ -2,7 +2,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using GeekHubAPI.Data;
 using GeekHubAPI.Models;
-//study more
 namespace GeekHubAPI.Controllers;
 
 [Route("api/[controller]")]
@@ -34,6 +33,18 @@ public class CharactersController : ControllerBase
         
         var character = await _context.Characters.Skip(randomIndex).FirstOrDefaultAsync();
                 
+        if (character == null) return NotFound();
+
+        return character;
+    }
+
+         //to do: Character page
+        // GET: api/characters/{id}
+    [HttpGet("{id}")]
+    public async Task<ActionResult<Character>> GetCharacterById(int id)
+    {
+        var character = await _context.Characters.FindAsync(id);
+
         if (character == null) return NotFound();
 
         return character;

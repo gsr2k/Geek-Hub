@@ -147,3 +147,4 @@ C:\Users\gsr\Desktop\Geek Hub\Back-End\GeekHubAPI\obj\Debug\net10.0\refint\GeekH
 C:\Users\gsr\Desktop\Geek Hub\Back-End\GeekHubAPI\obj\Debug\net10.0\GeekHubAPI.pdb
 C:\Users\gsr\Desktop\Geek Hub\Back-End\GeekHubAPI\obj\Debug\net10.0\GeekHubAPI.genruntimeconfig.cache
 C:\Users\gsr\Desktop\Geek Hub\Back-End\GeekHubAPI\obj\Debug\net10.0\ref\GeekHubAPI.dll
+C:\Users\gsr\Desktop\Geek Hub\Back-End\GeekHubAPI\obj\Debug\net10.0\GeekHubAPI.sourcelink.json

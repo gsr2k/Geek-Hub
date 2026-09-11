@@ -1,4 +1,3 @@
-/* Animação de entrada lateral reutilizável */
 @keyframes slideInRight {
     0% {
         opacity: 0;
@@ -10,7 +9,21 @@
     }
 }
 
-/* Classe utilitária para acionar o Push */
+@keyframes slideOutLeft {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-150px);
+    }
+}
+
 .animate-slide-in-right {
-    animation: slideInRight 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    animation: slideInRight 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.animate-slide-out-left {
+    animation: slideOutLeft 0.35s cubic-bezier(0.6, 0, 0.8, 0.2) forwards;
 }

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <link rel="stylesheet" href="../css/output.css">
+    <link rel="stylesheet" href="../css/animations.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About - Geek Hub</title>
+
+</head>
+
+<body class="overflow-x-hidden bg-zinc-950 text-white">
+
+    <nav class="flex h-20 items-center justify-between border-b border-zinc-800 bg-zinc-950 px-8">
+
+        <!-- Logo -->
+        <a
+            href="../index.html"
+            class="text-2xl font-bold tracking-tight transition-transform duration-200 ease-out hover:scale-105"
+        >
+            Geek <span class="text-yellow-500">Hub</span>
+        </a>
+
+        <!-- Main Navigation -->
+        <div class="flex items-center gap-8">
+
+            <a
+                href="../index.html"
+                class="text-sm font-medium text-zinc-400 transition-all duration-200 ease-out hover:scale-110 hover:text-white"
+            >
+                Home
+            </a>
+
+            <a
+                href="./anime.html"
+                class="text-sm font-medium text-zinc-400 transition-all duration-200 ease-out hover:scale-110 hover:text-white"
+            >
+                Anime
+            </a>
+
+            <a
+                href="./characters.html"
+                class="text-sm font-medium text-zinc-400 transition-all duration-200 ease-out hover:scale-110 hover:text-white"
+            >
+                Characters
+            </a>
+
+            <a
+                href="./about.html"
+                class="text-sm font-medium text-white transition-all duration-200 ease-out hover:scale-110"
+            >
+                About
+            </a>
+
+        </div>
+
+        <!-- Search -->
+        <div class="relative flex items-center">
+
+            <div
+                id="searchBar"
+                class="absolute right-12 top-1/2 z-10 flex w-72 -translate-y-1/2 translate-x-4 items-center rounded-full border border-zinc-700 bg-zinc-900 px-4 py-2 opacity-0 shadow-lg pointer-events-none transition-all duration-300 ease-out data-[open=true]:translate-x-0 data-[open=true]:opacity-100 data-[open=true]:pointer-events-auto"
+            >
+                <input
+                    id="searchInput"
+                    type="text"
+                    placeholder="Search anime or character..."
+                    class="w-full bg-transparent text-sm text-white outline-none placeholder:text-zinc-500"
+                >
+            </div>
+
+            <button
+                id="searchButton"
+                type="button"
+                class="relative z-20 flex h-10 w-10 items-center justify-center rounded-full text-zinc-400 transition-all duration-200 ease-out hover:scale-110 hover:bg-zinc-800 hover:text-white"
+                aria-label="Search"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.8"
+                    stroke="currentColor"
+                    class="h-5 w-5"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m21 21-4.35-4.35m1.35-5.4a6.75 6.75 0 1 1-13.5 0 6.75 6.75 0 0 1 13.5 0Z"
+                    />
+                </svg>
+            </button>
+
+        </div>
+
+    </nav>
+
+    <main class="relative w-full overflow-hidden bg-zinc-950 text-white">
+
+        <!-- Glow de fundo -->
+        <div class="pointer-events-none absolute left-1/2 top-1/3 h-[500px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-yellow-500/10 blur-[120px]"></div>
+
+        <!-- Conteúdo -->
+        <div class="relative z-10 mx-auto flex min-h-[calc(100vh-5rem)] max-w-3xl flex-col items-start gap-8 px-8 py-16">
+
+            <!-- Título -->
+            <h1 class="text-4xl font-bold leading-tight tracking-tight md:text-5xl lg:text-6xl">
+                About <br />
+                <span class="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">Geek Hub</span>
+            </h1>
+
+            <!-- Parágrafos -->
+            <div class="flex flex-col gap-6 text-base leading-relaxed text-zinc-400 md:text-lg">
+
+                <p>
+                    Geek Hub is a personal project built to practice
+                    <strong class="text-white">C# Web API development</strong> and
+                    modern front-end techniques. It's my very first back-end project.
+                </p>
+
+                <p>
+                    The goal is to build a modern and minimalist wiki for characters,
+                    giving each one a unique visual identity and immersive presentation
+                    instead of plain, boring text.
+                </p>
+
+                <p>
+                    The back-end is powered by <strong class="text-white">ASP.NET Core</strong> with
+                    <strong class="text-white">Entity Framework Core</strong> and SQLite, exposing a REST API.
+                    The front-end is built with <strong class="text-white">HTML, Tailwind CSS and vanilla JavaScript</strong>.
+                </p>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Scripts -->
+    <script src="../java-script/navbar.js"></script>
+
+</body>
+
+</html>

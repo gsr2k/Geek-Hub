@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GeekHubAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d76c970b44c5f6046f09c13ebf7f51bd8b8a6952")]
 [assembly: System.Reflection.AssemblyProductAttribute("GeekHubAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GeekHubAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

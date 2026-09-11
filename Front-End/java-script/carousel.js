@@ -1,14 +1,35 @@
-// ⚠️ TROQUE O 7199 PELA SUA PORTA QUE APARECEU NO TERMINAL
 const API_URL = 'http://localhost:5163/api/characters';
+const BASE_URL = API_URL.replace('/api/characters', '');
 
 const characterImage = document.getElementById('characterImage');
 const characterGlow = document.getElementById('characterGlow');
+const heroContainer = document.querySelector('.character-hero-container');
 const prevButton = document.getElementById('prevSlide');
 const nextButton = document.getElementById('nextSlide');
-const dotsContainer = document.querySelector('.mt-4.flex.items-center.gap-2'); // Ajustei aqui
+const dotsContainer = document.querySelector('.mt-4.flex.items-center.gap-2');
 
 let characters = [];
 let currentIndex = 0;
+let isAnimating = false;
+
+const ANIM_IN  = 'animate-slide-in-right';
+const ANIM_OUT = 'animate-slide-out-left';
+const OUT_DURATION = 350;   // deve bater com o tempo da animação no CSS
+const IN_DURATION  = 800;  // deve bater com o tempo da animação no CSS
+
+function hexToRgba(hex, alpha) {
+    const r = parseInt(hex.slice(1, 3), 16);
+    const g = parseInt(hex.slice(3, 5), 16);
+    const b = parseInt(hex.slice(5, 7), 16);
+    return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+}
+
+function retriggerAnimation(element, animationClass) {
+    if (!element) return;
+    element.classList.remove(ANIM_IN, ANIM_OUT);
+    void element.offsetWidth;
+    element.classList.add(animationClass);
+}
 
 async function fetchCharacters() {
     try {
@@ -20,25 +41,44 @@ async function fetchCharacters() {
         console.log("Personagens recebidos:", characters);
         
         createDots();
-        updateCharacter();
+        updateCharacter(true);
     } catch (error) {
-        console.error("Erro ao buscar personagens (verifique se o dotnet está rodando):", error);
+        console.error("Erro ao buscar personagens:", error);
     }
 }
 
-function updateCharacter() {
-    if (characters.length === 0) return;
+function updateCharacter(isFirstLoad = false) {
+    if (characters.length === 0 || isAnimating) return;
 
     const character = characters[currentIndex];
     
-    // Monta a URL completa da imagem (Localhost do Backend + caminho do JSON)
-    // Se a API retorna "/images/MeguminAsset.png", aqui vira "https://localhost:7199/images/MeguminAsset.png"
-    characterImage.src = `${API_URL.replace('/api/characters', '')}${character.imageUrl}`;
+    if (isFirstLoad) {
+        characterGlow.style.backgroundColor = hexToRgba(character.glowColor, 0.2);
+        characterImage.src = `${BASE_URL}${character.imageUrl}`;
+        updateDots();
+        return;
+    }
     
-    // Atualiza o Glow
-    characterGlow.style.backgroundColor = character.glowColor;
+    isAnimating = true;
     
-    // Atualiza as bolinhas
+    retriggerAnimation(heroContainer, ANIM_OUT);
+   
+    setTimeout(() => {
+        characterImage.src = `${BASE_URL}${character.imageUrl}`;
+        characterGlow.style.backgroundColor = hexToRgba(character.glowColor, 0.2);
+        
+        retriggerAnimation(heroContainer, ANIM_IN);
+
+        setTimeout(() => {
+            isAnimating = false;
+        }, IN_DURATION);
+
+    }, OUT_DURATION);
+
+    updateDots();
+}
+
+function updateDots() {
     const dots = dotsContainer.querySelectorAll('span');
     dots.forEach((dot, index) => {
         if (index === currentIndex) {
@@ -55,6 +95,7 @@ function createDots() {
         const dot = document.createElement('span');
         dot.className = `h-1.5 rounded-full cursor-pointer transition-all duration-300 ${index === 0 ? 'w-8 bg-yellow-500' : 'w-4 bg-zinc-700'}`;
         dot.addEventListener('click', () => {
+            if (index === currentIndex) return;
             currentIndex = index;
             updateCharacter();
         });
@@ -63,11 +104,13 @@ function createDots() {
 }
 
 prevButton.addEventListener('click', () => {
+    if (characters.length === 0) return;
     currentIndex = (currentIndex - 1 + characters.length) % characters.length;
     updateCharacter();
 });
 
 nextButton.addEventListener('click', () => {
+    if (characters.length === 0) return;
     currentIndex = (currentIndex + 1) % characters.length;
     updateCharacter();
 });
